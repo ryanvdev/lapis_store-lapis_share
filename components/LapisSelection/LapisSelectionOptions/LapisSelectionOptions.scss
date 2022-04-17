@@ -1,0 +1,92 @@
+.lapis-selection>.lapis-selection-container{
+    >.lapis-selection-options{
+        display: block;
+        width: 100%;
+        height: auto;
+        >ul{
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0px;
+            padding: 0px;
+            >li{
+                display: block;
+                overflow: hidden;
+                //
+                width: 100%;
+                height: 0px;
+                //
+                list-style-type: none;
+                transition: height var(--lapis-transition-time);
+                >div{
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    //
+                    width: 100%;
+                    height: var(--lapis-selection-option-height);
+                    //
+                    padding: 0px 3px;
+                    //
+                    cursor: pointer;
+                    //
+                    >div{
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        overflow: hidden;
+                        //
+                        width: 100%;
+                        height: calc(100% - 6px);
+                        //
+                        padding: 0px 10px;
+                        //
+                        border-radius: 3px;
+                        //
+                        color: var(--lapis-text-color);
+                        &::before{
+                            content: 'arrow_right';
+                            display: inline-block;
+                            //
+
+                            margin-right: 5px;
+                            font-family: 'Material Icons Outlined';
+                        }
+                    }
+                    &:hover >div{
+                        background-color: rgba(100,100,100,0.5);
+                        &::before{
+                            color: rgb(0,255,0);
+                        }
+                    }
+                }
+
+                // li hover
+                &.selected{
+                    >div>div{
+                        &::before{
+                            content: 'done_all';
+                            color: rgb(0,255,0);
+                        }
+                    }
+                }
+                &.mark{
+                    >div>div{
+                        background-color: rgba(100,100,100,0.5);
+                        &::before{
+                            color: rgb(0,255,0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.lapis-selection{
+    &.selecting{
+        >.lapis-selection-container>.lapis-selection-options>ul>li{
+            height: var(--lapis-selection-option-height);
+        }
+    }
+}

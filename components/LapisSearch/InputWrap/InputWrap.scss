@@ -1,0 +1,66 @@
+.lapis-search > .wrap > .input-wrap {
+    --lapis-input-wrap-padding: calc(var(--lapis-search-height) * 0.5);
+    //
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    //
+    width: 100%;
+    height: var(--lapis-search-height);
+    //
+    padding-left: var(--lapis-input-wrap-padding);
+    padding-right: 5px;
+    border-radius: var(--lapis-input-wrap-padding);
+    //
+    background-color: rgba(0, 0, 0, 0);
+    //
+    > input {
+        display: block;
+        //
+        width: calc(100% - var(--lapis-search-height) * 1.5 - 10px);
+        height: 100%;
+        //
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+        outline: unset;
+        //
+        color: var(--text-color);
+        font-family: var(--font-family);
+        font-size: calc(var(--lapis-search-height) * 0.4);
+    }
+    > button {
+        --button-height: calc(var(--lapis-search-height) - 10px);
+        //
+        display: block;
+        overflow: hidden;
+        //
+        width: calc(var(--lapis-search-height) * 1.5);
+        height: var(--button-height);
+        //
+        background-color: var(--text-color);
+        //
+        border: none;
+        border-radius: calc(var(--button-height) * 0.5);
+        outline: unset;
+        //
+        cursor: pointer;
+        transition: border-radius 0.5s;
+        // Search icon
+        &::before {
+            content: 'search';
+            display: block;
+            //
+            font-family: 'Material Icons Outlined';
+            font-size: calc(var(--lapis-search-height) * 0.55);
+            font-weight: bold;
+            color: var(--background-color);
+        }
+    }
+}
+
+.lapis-search.display-offer > .wrap > .input-wrap {
+    > button {
+        border-radius: 5px;
+    }
+}

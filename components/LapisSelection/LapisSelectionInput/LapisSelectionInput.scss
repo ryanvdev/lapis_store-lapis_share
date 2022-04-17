@@ -1,0 +1,30 @@
+.lapis-selection>.lapis-selection-container>.lapis-input-container{
+    >input{
+        display: block;
+        position: relative;
+        z-index: 1;
+        float: left;
+        //
+        width: calc(100% - var(--lapis-selection-input-height) * 2);
+        height: 100%;
+        //
+        padding-left: var(--lapis-input-padding);
+        //
+        outline: unset;
+        border: none;
+        //
+        color: rgba(0,0,0,0);
+        font-family: inherit;
+        font-size: 17px;
+        //
+        background-color: rgba(0,0,0,0);
+    }
+}
+
+.lapis-selection{
+    &.selecting>.lapis-selection-container>.lapis-input-container{
+        >input{ 
+            color: var(--lapis-text-color);
+        }
+    }
+}

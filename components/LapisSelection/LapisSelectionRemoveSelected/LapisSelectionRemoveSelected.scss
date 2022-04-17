@@ -1,0 +1,45 @@
+.lapis-selection>.lapis-selection-container>.lapis-input-container{
+    >.lapis-selection-remove-selected{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        float: left;
+        overflow: hidden;
+        //
+        width: auto;
+        height: 100%;
+        aspect-ratio: 1;
+        //
+        user-select: none;
+        
+        >div{
+            display: none;
+            justify-content: center;
+            align-items: center;
+            //
+            width: 21px;
+            height: 21px;
+            //
+            font-family: 'Material Icons Outlined';
+            font-size: 18px;
+            color: gray;
+            //
+            cursor: pointer;
+        }
+
+        &:hover{
+            >div{
+                color: orangered;
+            }
+        }
+    }
+}
+
+.lapis-selection{
+    &.selected{
+        >.lapis-selection-container>.lapis-input-container>.lapis-selection-remove-selected>div{
+            display: flex;
+        }
+    }
+}
+    

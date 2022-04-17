@@ -1,0 +1,123 @@
+.lapis-search > .wrap > .offer-wrap {
+    --offer-item-height: 0px;
+    --offer-transition: height 0.5s;
+    --offer-line-height: 0px;
+    --offer-line-width: 0%;
+    //
+    display: block;
+    overflow: hidden;
+    //
+    width: 100%;
+    height: auto;
+    //
+    > .line {
+        display: block;
+        //
+        width: 100%;
+        height: var(--offer-line-height);
+        //
+        > div {
+            display: block;
+            //
+            width: var(--offer-line-width);
+            height: 2px;
+            //
+            margin-left: auto;
+            margin-right: auto;
+            //
+            background-color: rgba(255, 255, 255, 0.1);
+            transition: width 0.5s;
+        }
+    }
+    //
+    > .title {
+        display: block;
+        //
+        width: 100%;
+        height: var(--offer-item-height);
+        //
+        transition: var(--offer-transition);
+        //
+        > div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            //
+            width: 100%;
+            height: 40px;
+            //
+            font-size: 18px;
+            //
+            padding-left: 20px;
+        }
+    }
+    //
+    > ul {
+        display: block;
+        > li {
+            display: block;
+            overflow: hidden;
+            //
+            height: var(--offer-item-height);
+            //
+            list-style-type: none;
+            //
+            transition: var(--offer-transition);
+            //
+            // Wrap offer item
+            > div {
+                display: block;
+                //
+                width: 100%;
+                height: 40px;
+                //
+                font-size: 20px;
+                //
+                padding-top: 0px;
+                padding-bottom: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                //
+                // offer item
+                > a {
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    //
+                    width: 100%;
+                    height: 30px;
+                    //
+                    border-radius: 5px;
+                    padding-right: 10px;
+                    padding-left: 10px;
+                    //
+                    font-size: 16px;
+                    color: inherit;
+                    text-decoration: none;
+                    //
+                    cursor: pointer;
+                    &::before {
+                        content: 'search';
+                        display: inline-block;
+                        //
+                        width: 30px;
+                        //
+                        font-family: 'Material Icons Outlined';
+                        text-align: center;
+                    }
+                }
+                &:hover {
+                    > a {
+                        background-color: rgba(255, 255, 255, 0.1);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.lapis-search.display-offer > .wrap > .offer-wrap {
+    --offer-item-height: 40px;
+    --offer-line-height: 2px;
+    --offer-line-width: 90%;
+}

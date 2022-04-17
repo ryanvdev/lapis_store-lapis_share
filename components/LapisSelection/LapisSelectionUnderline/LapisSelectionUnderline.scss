@@ -1,0 +1,38 @@
+.lapis-selection>.lapis-selection-container{
+    >.lapis-selection-underline{
+        display: block;
+        //
+        width: 100%;
+        height: var(--lapis-underline-height);
+        background-color: var(--lapis-underline-color);
+        >div{
+            display: block;
+            //
+            width: 0%;
+            height: 100%;
+            //
+            margin-left: auto;
+            margin-right: auto;
+            //
+            background-color: var(--lapis-highlight-color);
+            //
+            transition: width var(--lapis-transition-time);
+        }
+    }
+}
+
+.lapis-selection{
+    &.selecting,
+    &.selecting.selected
+    {
+        >.lapis-selection-container>.lapis-selection-underline>div{
+            width: 100%;
+        }
+    }
+    //
+    &.selected{
+        >.lapis-selection-container>.lapis-selection-underline>div{
+            width: 100%;
+        }
+    } 
+}

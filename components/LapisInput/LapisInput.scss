@@ -1,0 +1,192 @@
+.lapis-input {
+    --lapis-text-color: rgb(255,255,255);
+    --lapis-highlight-color: rgb(255,255,255);
+    --lapis-width: 400px;
+    --lapis-underline-color: rgba(255,255,255,0.2);
+    --lapis-input-padding: 5px;
+    --lapis-underline-height: 2px;
+    --lapis-message-width: 150px;
+    --lapis-message-font-size: 14px;
+
+    --lapis-input-title-height: 20px;
+    --lapis-input-input-height: 30px;
+    $input-padding: 5px;
+    //
+    display: block;
+    width: var(--lapis-width);
+    height: auto;
+    >.title {
+        display: block;
+        width: 100%;
+        height: var(--lapis-input-title-height);
+        >div {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            z-index: 0;
+            //
+            top: var(--lapis-input-title-height);
+            //
+            width: 100%;
+            height: var(--lapis-input-input-height);
+            //
+            padding-left: $input-padding;
+            //
+            font-size: 17px;
+            color: var(--lapis-text-color);
+            //
+            transition: all 0.3s;
+        }
+    }
+    >.input-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1;
+        //
+        height: var(--lapis-input-input-height);
+        //
+        >input {
+            display: block;
+            //
+            width: calc(100% - var(--lapis-input-input-height));
+            height: 100%;
+            //
+            padding-left: $input-padding;
+            padding-right: $input-padding;
+            //
+            font-size: 17px;
+            color: var(--lapis-text-color);
+            font-family: inherit;
+            //
+            outline: unset;
+            border: none;
+            //
+            background-color: rgba(0, 0, 0, 0);
+            //
+            &[type='number'] {
+                &::-webkit-inner-spin-button,
+                &::-webkit-outer-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+            }
+            &[type='datetime-local'] {
+                color: rgba(0, 0, 0, 0);
+                &::-webkit-calendar-picker-indicator {
+                    display: block;
+                    overflow: visible;
+                    opacity: 0;
+                    //
+                    width: auto;
+                    height: 60%;
+                    aspect-ratio: 1;
+                    //
+                    background-color: var(--lapis-highlight-color);
+                    // padding: 4px;
+                    border-radius: 3px;
+                    color: black;
+                    cursor: pointer;
+                }
+                &:hover {
+                    &::-webkit-calendar-picker-indicator {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        >div {
+            display: none;
+            //
+            width: auto;
+            height: 100%;
+            aspect-ratio: 1;
+            cursor: default;
+            >.icon {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                //
+                width: 100%;
+                height: 100%;
+                //
+                font-size: calc(var(--lapis-input-input-height) * 0.8);
+                font-family: 'Material Icons Outlined';
+                //
+                user-select: none;
+            }
+            >.message {
+                //
+                display: none;
+                position: relative;
+                z-index: 10;
+                //
+                left: calc(var(--lapis-message-width) * -1);
+                top: -10px;
+                //
+                width: var(--lapis-message-width);
+                height: auto;
+                //
+                padding: 5px;
+                //
+                font-size: var(--lapis-message-font-size);
+                color: white;
+                //
+                background-color: black;
+                //
+                border-radius: 5px;
+            }
+            &:hover {
+                .message.show-message {
+                    display: block;
+                }
+            }
+            &.show-icon {
+                display: block;
+            }
+        }
+    }
+    >.line {
+        display: block;
+        overflow: hidden;
+        //
+        width: 100%;
+        height: var(--lapis-underline-height);
+        background-color: var(--lapis-underline-color);
+        >div {
+            display: block;
+            height: 100%;
+            width: 0%;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: var(--lapis-highlight-color);
+            transition: width 0.3s;
+        }
+    }
+}
+
+.lapis-ui.lapis-input.typing {
+    >.title {
+        >div {
+            top: 0px;
+            //
+            height: 100%;
+            //
+            font-size: 13px;
+            //
+            color: var(--lapis-highlight-color);
+        }
+    }
+    .input-wrap>input {
+        &[type='datetime-local'] {
+            color: whitesmoke;
+        }
+    }
+    >.line {
+        >div {
+            width: 100%;
+        }
+    }
+}

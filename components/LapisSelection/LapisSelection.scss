@@ -1,0 +1,64 @@
+$input-padding: 5px;
+$transition-time: 0.5s;
+//
+.lapis-selection {
+    --lapis-text-color: rgb(255,255,255);
+    --lapis-highlight-color: rgb(255,255,255);
+    --lapis-transition-time: 0.3s;
+    --lapis-input-padding: 5px;
+    --lapis-width: 300px;
+    --lapis-padding-left: 10px;
+    --lapis-underline-color: rgba(255,255,255,0.2);
+    --lapis-message-width: 150px;
+    --lapis-message-font-size: 14px;
+
+    --lapis-selection-background-color: rgb(31,31,31);
+    --lapis-selection-title-height: 20px;
+    --lapis-selection-input-height: 30px;
+    --lapis-underline-height: 2px;
+    --lapis-selection-option-height: 36px;
+    --lapis-selection-option-wrap-height: 0px;
+    --lapis-selection-max-item: 5;
+
+    display: block;
+    //
+    width: var(--lapis-width);
+    height: calc(
+        var(--lapis-selection-title-height) + var(--lapis-selection-input-height) +
+            var(--lapis-underline-height)
+    );
+    //
+    > .cover{
+        display: none;
+        position: fixed;
+        //
+        top: 0px;
+        left: 0px;
+        //
+        width: 100vw;
+        height: 100vh;
+    }
+    > .lapis-selection-container {
+        display: block;
+        position: relative;
+        //
+        width: 100%;
+        height: auto;
+        //
+        transition: background-color var(--lapis-transition-time);
+        @import './lapis-input-container.scss';
+    }
+}
+
+.lapis-selection.selecting {
+    >.cover{
+        display: block;
+        z-index: 100;
+    }
+    >.lapis-selection-container{
+        z-index: 101;
+        background-color: var(--lapis-selection-background-color);
+        border-radius: 5px;
+        box-shadow: 4px 4px 5px black;
+    }
+}

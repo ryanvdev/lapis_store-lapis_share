@@ -1,0 +1,49 @@
+.lapis-search {
+    --lapis-search-width: 500px;
+    --lapis-search-height: 40px;
+    //
+    display: block;
+    overflow: visible;
+    //
+    width: var(--lapis-search-width);
+    height: var(--lapis-search-height);
+    max-width: 100%;
+    //
+    > .cover {
+        display: none;
+        position: fixed;
+        z-index: 0;
+        top: 0px;
+        left: 0px;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.01);
+    }
+    > .wrap {
+        display: block;
+        overflow: hidden;
+        position: relative;
+        z-index: 0;
+        //
+        width: 100%;
+        height: auto;
+        //
+        background-color: rgb(53, 53, 53);
+        //
+        border-radius: calc(var(--lapis-search-height) * 0.5);
+        //
+        transition: border-radius 0.5s;
+    }
+}
+
+//
+.lapis-search.display-offer {
+    > .cover {
+        display: block;
+        z-index: 100;
+    }
+    > .wrap {
+        z-index: 101;
+        border-radius: 5px;
+    }
+}
